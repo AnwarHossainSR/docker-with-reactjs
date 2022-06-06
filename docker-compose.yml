@@ -1,0 +1,16 @@
+version: "3.4"
+
+services:
+  docker-with-react:
+    image: docker-with-react
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - 3000:3000
+    volumes:
+      - ./:/test-react
+    env_file:
+      - ./.env
+    # environment:
+    #   NODE_ENV: production
